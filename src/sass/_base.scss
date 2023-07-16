@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$mainColor: #da0037;
+$bgColor: #171717;
+$bgColor-2: #444444;
+$textColor: #ededed;
+$mainColor-opacity: rgba($mainColor, 0.7);
+$gray: #abb2bf;
+
+.gradinent-red {
+  background: radial-gradient($mainColor, $bgColor);
+  border-radius: 50%;
+  filter: blur(40px);
+  width: 300px;
+  height: 300px;
+}
+
+::-webkit-scrollbar {
+  background-color: $bgColor;
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $mainColor;
+}
+body {
+  background-color: $bgColor;
+}
+.hash {
+  font-size: 24px;
+  color: $mainColor;
+  margin-right: 3px;
+}
+.navbar {
+  background-color: $bgColor;
+  font-size: 20px;
+  button {
+    color: $textColor;
+  }
+  .logo {
+    height: 64px;
+  }
+  .nav-link {
+    color: $textColor;
+    &.active {
+      color: $mainColor;
+    }
+  }
+}
+
+.home {
+  position: relative;
+  background-color: rgba($bgColor, 0.7);
+  height: calc(100vh - 90px);
+
+  .hero {
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding: 20px;
+
+    .hero-content {
+      flex: 1;
+      color: $textColor;
+      p {
+        color: $gray;
+        display: block;
+        font-size: 24px;
+      }
+      h1 {
+        min-width: 300px;
+        font-size: 48px;
+        font-weight: 600;
+        span {
+          color: $mainColor;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: $textColor;
+        border: 1px solid $mainColor;
+        padding: 10px;
+        margin: 10px 0;
+        display: inline-block;
+        transition: all 0.5s;
+        &:hover {
+          background-color: $mainColor;
+        }
+      }
+    }
+  }
+  .hero-img {
+    .avater {
+      max-width: 100%;
+    }
+    @media (max-width: 768px) {
+      .avater {
+        max-width: 80%;
+      }
+    }
+  }
+}
+.section-header {
+  color: #fff;
+  margin: 20px;
+  width: fit-content;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: $mainColor;
+    width: 16rem;
+    height: 2px;
+    bottom: 5px;
+    left: 110%;
+  }
+}
+
+.projects-filter {
+  background-color: $bgColor-2;
+  color: white;
+  width: 100%;
+  border-radius: 6px;
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    @media (max-width: 768px) {
+      .option {
+        margin: 5px;
+      }
+    }
+  }
+  .option {
+    display: inline-block;
+    list-style: none;
+    border: 1px solid $mainColor;
+    padding: 10px;
+    min-width: 80px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.5s;
+    &:hover {
+      background-color: $mainColor-opacity;
+    }
+    &.active {
+      background-color: $mainColor;
+    }
+  }
+}
+.projects {
+  margin: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  .project-card {
+    transition: all 0.5s;
+    border: 1px solid $textColor;
+    img {
+      max-width: 100%;
+    }
+    &:hover {
+      border-color: $mainColor;
+      box-shadow: 0 0 25px $mainColor-opacity;
+      .project-skills {
+        border-color: $mainColor;
+      }
+    }
+    .project-skills {
+      transition: 0.5s;
+      border-bottom: 1px solid $textColor;
+      border-top: 1px solid $textColor;
+      padding: 5px;
+      span {
+        display: inline-block;
+        color: $gray;
+        font-size: 22px;
+        padding: 5px;
+      }
+    }
+    .info {
+      padding: 15px;
+    }
+    .title {
+      color: $textColor;
+    }
+    .discription {
+      color: $gray;
+    }
+    .links a {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      border: 1px solid $mainColor;
+      padding: 10px;
+      color: $textColor;
+      margin: 0 5px 5px;
+      &::before {
+        z-index: -1;
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: $mainColor-opacity;
+        width: 0;
+        transition: all 0.5s;
+      }
+      &:hover::before {
+        width: 100%;
+      }
+    }
+  }
+}
