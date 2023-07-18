@@ -1,13 +1,9 @@
-class ProjectsView {
+import view from "./view";
+
+class ProjectsView extends view {
   _data;
   _parentEl = document.querySelector(".projects");
   _optionsContainer = document.querySelector(".projects-filter ul");
-  render(data) {
-    this._data = data;
-    let markup = this._generateMarkup();
-    this._parentEl.innerHTML = "";
-    this._parentEl.insertAdjacentHTML("afterbegin", markup);
-  }
   _generateMarkup() {
     return this._data
       .map((pro) => {
@@ -48,8 +44,8 @@ class ProjectsView {
       let checkIsOp = e.target.classList.contains("option");
       if (!checkIsOp) return;
       let option = e.target;
+      document.querySelector(".option.active").classList.remove("active");
       handler(option);
-      console.log("test");
     });
   }
 }

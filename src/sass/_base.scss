@@ -28,6 +28,7 @@ $gray: #abb2bf;
 }
 body {
   background-color: $bgColor;
+  overflow-x: hidden;
 }
 .hash {
   font-size: 24px;
@@ -49,6 +50,9 @@ body {
       color: $mainColor;
     }
   }
+}
+.hidden {
+  display: none;
 }
 
 .home {
@@ -115,7 +119,7 @@ body {
     content: "";
     position: absolute;
     background-color: $mainColor;
-    width: 16rem;
+    width: 100%;
     height: 2px;
     bottom: 5px;
     left: 110%;
@@ -123,31 +127,31 @@ body {
 }
 
 .projects-filter {
-  background-color: $bgColor-2;
   color: white;
-  width: 100%;
-  border-radius: 6px;
   ul {
+    margin: auto;
+    border-radius: 12px;
+    background-color: $bgColor-2;
+    width: fit-content;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-    padding: 10px;
+    padding: 5px;
     @media (max-width: 768px) {
-      .option {
-        margin: 5px;
-      }
+      justify-content: center;
     }
   }
   .option {
     display: inline-block;
     list-style: none;
     border: 1px solid $mainColor;
-    padding: 10px;
+    padding: 5px;
+    margin: 5px;
     min-width: 80px;
     text-align: center;
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: 12px;
     transition: all 0.5s;
     &:hover {
       background-color: $mainColor-opacity;
@@ -160,11 +164,12 @@ body {
 .projects {
   margin: 30px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
   .project-card {
     transition: all 0.5s;
     border: 1px solid $textColor;
+    animation: filterAn 0.5s ease-in;
     img {
       max-width: 100%;
     }
@@ -219,5 +224,71 @@ body {
         width: 100%;
       }
     }
+  }
+}
+@keyframes filterAn {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+@media (max-width: 768px) {
+  h1,
+  h2 {
+    font-size: 28px !important;
+  }
+  p,
+  .project-skills span {
+    font-size: 18px !important;
+  }
+}
+
+.spinner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .logo {
+    width: 64px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      border-top: 1px solid $mainColor;
+      padding: 2px;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      animation: spinner2 1s ease-in infinite;
+      border-radius: 50%;
+    }
+    img {
+      animation: spinner 1s ease-in infinite;
+      width: 100%;
+    }
+  }
+}
+@keyframes spinner {
+  0%,
+  100% {
+    transform: rotateY(0);
+  }
+  50% {
+    transform: rotateY(360deg);
+  }
+}
+@keyframes spinner2 {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(360deg);
   }
 }
