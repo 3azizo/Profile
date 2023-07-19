@@ -11,12 +11,12 @@ $textColor: #ededed;
 $mainColor-opacity: rgba($mainColor, 0.7);
 $gray: #abb2bf;
 
-.gradinent-red {
-  background: radial-gradient($mainColor, $bgColor);
+@mixin gradinent($color, $size, $blur) {
+  background: $color;
   border-radius: 50%;
-  filter: blur(40px);
-  width: 300px;
-  height: 300px;
+  filter: blur($blur);
+  width: $size;
+  height: $size;
 }
 
 ::-webkit-scrollbar {
@@ -54,6 +54,18 @@ body {
 .hidden {
   display: none;
 }
+a.btn-custom {
+  text-decoration: none;
+  color: $textColor;
+  border: 1px solid $mainColor;
+  padding: 10px;
+  margin: 10px 0;
+  display: inline-block;
+  transition: all 0.5s;
+  &:hover {
+    background-color: $mainColor;
+  }
+}
 
 .home {
   position: relative;
@@ -83,18 +95,6 @@ body {
         font-weight: 600;
         span {
           color: $mainColor;
-        }
-      }
-      a {
-        text-decoration: none;
-        color: $textColor;
-        border: 1px solid $mainColor;
-        padding: 10px;
-        margin: 10px 0;
-        display: inline-block;
-        transition: all 0.5s;
-        &:hover {
-          background-color: $mainColor;
         }
       }
     }
@@ -131,7 +131,8 @@ body {
   ul {
     margin: auto;
     border-radius: 12px;
-    background-color: $bgColor-2;
+    background-color: rgba($bgColor-2, 0.5);
+    border: 1px solid $bgColor-2;
     width: fit-content;
     display: flex;
     justify-content: flex-start;
@@ -290,5 +291,59 @@ body {
   }
   50% {
     transform: rotate(360deg);
+  }
+}
+
+.about {
+  border-radius: 12px;
+  background-color: rgba($bgColor-2, 0.5);
+  border: 1px solid $bgColor-2;
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  margin: 50px 0;
+  display: flex;
+  flex-wrap: wrap;
+  .info {
+    min-width: 300px;
+    flex: 1;
+    color: $gray;
+    span {
+      font-size: 18px;
+      color: $textColor;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  .skills {
+    min-width: 300px;
+    flex: 1;
+    text-align: center;
+    .my-skills {
+      color: $mainColor;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .skills-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      .skill {
+        color: $gray;
+        background-color: $mainColor;
+        padding: 10px;
+        margin: 5px;
+      }
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    @include gradinent($mainColor-opacity, 400px, 50px);
+    top: 50%;
+    left: -100px;
+    z-index: -1;
+    transform: translateY(-50%);
   }
 }
