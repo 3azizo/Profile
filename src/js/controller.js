@@ -3,6 +3,8 @@ import * as bootstrap from "bootstrap";
 import data from "./projectsData";
 import projectsView from "./views/projectsView";
 import Typed from "typed.js";
+
+// typeing animation
 var typed = new Typed("#change", {
   strings: [
     "Full Stack Developer",
@@ -13,6 +15,8 @@ var typed = new Typed("#change", {
   loop: true,
   backSpeed: 50,
 });
+
+// to handel projects
 const filterController = (option) => {
   let skill = option.dataset.skill;
   option.classList.add("active");
@@ -24,6 +28,7 @@ const filterController = (option) => {
   }
   projectsView.render(filterData);
 };
+// start functionalty
 function init() {
   projectsView.render(data);
   projectsView.renderOptions();

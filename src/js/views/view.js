@@ -2,8 +2,6 @@ import logo from "../../img/redLogo.png";
 class view {
   _data;
   _parentEl;
-  _optionsContainer;
-  constructor() {}
   render(data) {
     this._data = data;
     let markup = this._generateMarkup();

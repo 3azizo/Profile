@@ -73,7 +73,7 @@ a.btn-custom {
   height: calc(100vh - 90px);
 
   .hero {
-    height: 70vh;
+    height: 70svh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -98,18 +98,23 @@ a.btn-custom {
         }
       }
     }
+    @media (max-width: 768px) {
+      margin: 25px auto;
+    }
   }
   .hero-img {
-    .avater {
-      max-width: 100%;
-    }
-    @media (max-width: 768px) {
-      .avater {
-        max-width: 80%;
+    text-align: center;
+    margin: auto;
+    #avatar {
+      width: 400px;
+      border-bottom: 1px solid $mainColor;
+      @media (max-width: 1200px) {
+        width: 200px;
       }
     }
   }
 }
+
 .section-header {
   color: #fff;
   margin: 20px;
@@ -163,14 +168,16 @@ a.btn-custom {
   }
 }
 .projects {
-  margin: 30px;
+  margin: 50px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
   gap: 30px;
   .project-card {
     transition: all 0.5s;
     border: 1px solid $textColor;
     animation: filterAn 0.5s ease-in;
+    animation-fill-mode: backwards;
     img {
       max-width: 100%;
     }
@@ -189,7 +196,7 @@ a.btn-custom {
       span {
         display: inline-block;
         color: $gray;
-        font-size: 22px;
+        font-size: 20px;
         padding: 5px;
       }
     }
@@ -226,6 +233,17 @@ a.btn-custom {
       }
     }
   }
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    .project-card {
+      .project-skills span {
+        font-size: 16px;
+      }
+      .title {
+        font-size: 22px;
+      }
+    }
+  }
 }
 @keyframes filterAn {
   0% {
@@ -240,11 +258,11 @@ a.btn-custom {
 @media (max-width: 768px) {
   h1,
   h2 {
-    font-size: 28px !important;
+    font-size: 24px !important;
   }
   p,
   .project-skills span {
-    font-size: 18px !important;
+    font-size: 16px !important;
   }
 }
 
@@ -253,6 +271,7 @@ a.btn-custom {
   height: 100%;
   display: flex;
   justify-content: center;
+  background-color: $bgColor;
   align-items: center;
   .logo {
     width: 64px;
@@ -345,5 +364,37 @@ a.btn-custom {
     left: -100px;
     z-index: -1;
     transform: translateY(-50%);
+  }
+}
+footer {
+  padding: 20px;
+  margin-top: 50px;
+  border-top: 1px solid $mainColor;
+  color: $gray;
+  text-align: center;
+  .Contact {
+    background-color: rgba($mainColor, 0.5);
+    padding: 10px;
+    border: 1px solid $mainColor;
+    top: 20px;
+    right: 100px;
+    .links {
+      a {
+        color: $gray;
+        display: inline-block;
+        margin: 5px;
+        transition: all 0.5s;
+        i {
+          font-size: 24px;
+        }
+        &:hover {
+          color: $textColor;
+        }
+      }
+    }
+  }
+  span {
+    margin-top: 20px;
+    display: block;
   }
 }

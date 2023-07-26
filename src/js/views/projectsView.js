@@ -6,8 +6,8 @@ class ProjectsView extends view {
   _optionsContainer = document.querySelector(".projects-filter ul");
   _generateMarkup() {
     return this._data
-      .map((pro) => {
-        return `<div class="project-card">
+      .map((pro, i) => {
+        return `<div class="project-card" style="animation-delay:${i * 200}ms">
       <img src="${pro.img}" alt="project img" />
       <div class="project-skills">
         ${this._generateSkill(pro.skills)}
