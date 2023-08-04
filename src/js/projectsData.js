@@ -5,6 +5,7 @@ import bankWebsite from "../img/projects/bank-website.jpg";
 import mangementSystem from "../img/projects/mangementSystem.jpg";
 import oldPorject from "../img/projects/oldporject.jpg";
 import templetThree from "../img/projects/templetThree.jpg";
+import GYM from "../img/projects/GYM.jpg";
 
 const data = [
   {
@@ -15,14 +16,30 @@ const data = [
     repo: "https://github.com/3azizo/The-Complete-JavaScript-Course",
     live: "https://forkify-3azizo.netlify.app/",
   },
-  {
-    img: "",
-    name: "Spotify clone",
-    discription: " ",
-    skills: ["React", "Redux", "Tailwaind"],
-    repo: "",
-    live: "",
-  },
+  // {
+  //   img: "",
+  //   name: "Spotify Clone",
+  //   discription: " ",
+  //   skills: ["React", "Redux", "Tailwaind"],
+  //   repo: "",
+  //   live: "",
+  // },
+  // {
+  //   img: "",
+  //   name: "Youtube Clone",
+  //   discription: " ",
+  //   skills: ["React", "Redux", "Tailwaind"],
+  //   repo: "",
+  //   live: "",
+  // },
+  // {
+  //   img: "",
+  //   name: "Google Clone",
+  //   discription: " ",
+  //   skills: ["React", "Redux", "Tailwaind"],
+  //   repo: "",
+  //   live: "",
+  // },
   {
     img: mapty,
     name: "Mapty",
@@ -44,16 +61,16 @@ const data = [
     name: "Hoobank",
     discription: "",
     skills: ["React", "Tailwaind"],
-    repo: "",
-    live: "",
+    repo: "https://github.com/3azizo/The-Complete-JavaScript-Course",
+    live: "https://3azizo.github.io/The-Complete-JavaScript-Course/",
   },
   {
     img: mangementSystem,
     name: "Mangement System",
     discription: "",
     skills: ["Javascript", "CSS", "HTML"],
-    repo: "",
-    live: "",
+    repo: "https://github.com/3azizo/Management-system",
+    live: "https://3azizo.github.io/Management-system/",
   },
   {
     img: templetThree,
@@ -65,11 +82,11 @@ const data = [
   },
   {
     img: oldPorject,
-    name: "",
+    name: "Old Pofile",
     discription: "",
     skills: ["Javascript", "CSS", "HTML"],
-    repo: "",
-    live: "",
+    repo: "https://github.com/3azizo/web-project-2",
+    live: "https://3azizo.github.io/web-project-2/",
   },
   {
     img: "",
@@ -88,12 +105,12 @@ const data = [
     live: "https://3azizo.github.io/small-projects/",
   },
   {
-    img: "",
+    img: GYM,
     name: "GYM Landing page",
     discription: "",
     skills: ["React"],
-    repo: "https://github.com/3azizo/small-projects",
-    live: "https://3azizo.github.io/small-projects/",
+    repo: "https://github.com/3azizo/React_The_Complete_Guide/tree/main/GYM%20Website",
+    live: "https://gym-3azizo.netlify.app/",
   },
 ];
 export default data;
