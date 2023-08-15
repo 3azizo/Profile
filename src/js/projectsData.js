@@ -6,7 +6,8 @@ import mangementSystem from "../img/projects/mangementSystem.jpg";
 import oldPorject from "../img/projects/oldporject.jpg";
 import templetThree from "../img/projects/templetThree.jpg";
 import GYM from "../img/projects/GYM.jpg";
-
+import Dashborad from "../img/projects/dashboard.jpg";
+import smallprojects from "../img/projects/small-projects.jpg";
 const data = [
   {
     img: recipe,
@@ -82,14 +83,14 @@ const data = [
   },
   {
     img: oldPorject,
-    name: "Old Pofile",
+    name: "Old Porfile",
     discription: "",
     skills: ["Javascript", "CSS", "HTML"],
     repo: "https://github.com/3azizo/web-project-2",
     live: "https://3azizo.github.io/web-project-2/",
   },
   {
-    img: "",
+    img: Dashborad,
     name: "Dashboard",
     discription: "5 page dashboard design responseve ",
     skills: ["CSS", "HTML"],
@@ -97,7 +98,7 @@ const data = [
     live: "https://3azizo.github.io/Dashboard/",
   },
   {
-    img: "",
+    img: smallprojects,
     name: "Small Projects",
     discription: "+50 small projects in 1 repo ",
     skills: ["Javascript", "CSS", "HTML"],
