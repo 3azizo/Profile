@@ -1,4 +1,4 @@
-import logo from "../../img/redLogo.png";
+import logo from "../../img/redlogo.png";
 class view {
   _data;
   _parentEl;
